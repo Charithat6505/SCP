@@ -77,7 +77,15 @@ function toggleAnimation() {
     }
 }
 
-(charitha)
+function speedUp() {
+    currentSpeed = currentSpeed >= 4 ? 0.5 : currentSpeed * 2;
+    const orbits = document.querySelectorAll('.orbit');
+    
+    orbits.forEach((orbit, index) => {
+        const baseDuration = [5, 8, 12, 16, 20][index];
+        orbit.style.animationDuration = (baseDuration / currentSpeed) + 's';
+    });
+}
 
 function resetView() {
     currentSpeed = 1;
