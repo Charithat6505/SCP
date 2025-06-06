@@ -121,4 +121,23 @@ document.querySelectorAll('.nav-item').forEach(item => {
 document.addEventListener('DOMContentLoaded', function() {
     createStars();
     createFloatingElements();
-});s
+});
+
+// Add some interactive sound effects (visual feedback)
+document.addEventListener('click', (e) => {
+    const ripple = document.createElement('div');
+    ripple.style.position = 'absolute';
+    ripple.style.left = e.clientX - 25 + 'px';
+    ripple.style.top = e.clientY - 25 + 'px';
+    ripple.style.width = '50px';
+    ripple.style.height = '50px';
+    ripple.style.border = '2px solid #00ffff';
+    ripple.style.borderRadius = '50%';
+    ripple.style.pointerEvents = 'none';
+    ripple.style.animation = 'ripple 0.6s ease-out';
+    ripple.style.zIndex = '9999';
+
+    document.body.appendChild(ripple);
+
+    setTimeout(() => ripple.remove(), 600);
+});
