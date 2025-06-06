@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic HTML5 document setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Explorer - Interactive Solar System</title>
+    <!-- Link to external CSS file for all styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CUSTOM CURSOR: Creates a glowing cyan dot that follows the mouse -->
+    <div class="custom-cursor"></div>
+    
+    <!-- STARFIELD BACKGROUND: Container for dynamically generated twinkling stars -->
+    <div class="stars"></div>
+    
+    <!-- FLOATING ELEMENTS: Container for ambient floating particles -->
+    <div class="floating-elements"></div>
+    
+    <!-- NAVIGATION MENU: Fixed position menu with hover effects -->
+    <nav class="nav-menu">
+        <a href="#" class="nav-item">Explore</a>
+        <a href="#" class="nav-item">Planets</a>
+        <a href="#" class="nav-item">Missions</a>
+        <a href="#" class="nav-item">Gallery</a>
+    </nav>
+    
+    <!-- HERO SECTION: Main landing area with animated title and call-to-action -->
+    <section class="hero">
+        <!-- Animated gradient text with color shifting effect -->
+        <h1>COSMIC EXPLORER</h1>
+        <p>Journey through the infinite cosmos and discover the mysteries of our solar system in stunning 3D. Hover over planets to learn fascinating facts about each celestial body.</p>
+        <!-- Button triggers smooth scroll to solar system -->
+        <button class="cta-button" onclick="startExploration()">Begin Journey</button>
+    </section>
+    
+    <!-- 3D SOLAR SYSTEM: Main interactive feature with rotating planets -->
+    <div class="solar-system">
+        <!-- Central sun with pulsing glow effect -->
+        <div class="sun" data-planet="sun">
+            <div class="planet-label">The Sun</div>
+        </div>
+        
+        <!-- Each orbit contains a planet that rotates around the sun -->
+        <!-- Mercury orbit (fastest, innermost) -->
+        <div class="orbit">
+            <div class="planet mercury" data-planet="mercury">
+                <div class="planet-label">Mercury</div>
+            </div>
+        </div>
+        
+        <!-- Venus orbit -->
+        <div class="orbit">
+            <div class="planet venus" data-planet="venus">
+                <div class="planet-label">Venus</div>
+            </div>
+        </div>
+        
+        <!-- Earth orbit -->
+        <div class="orbit">
+            <div class="planet earth" data-planet="earth">
+                <div class="planet-label">Earth</div>
+            </div>
+        </div>
+        
+        <!-- Mars orbit -->
+        <div class="orbit">
+            <div class="planet mars" data-planet="mars">
+                <div class="planet-label">Mars</div>
+            </div>
+        </div>
+        
+        <!-- Jupiter orbit (slowest, outermost) -->
+        <div class="orbit">
+            <div class="planet jupiter" data-planet="jupiter">
+                <div class="planet-label">Jupiter</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PLANET INFORMATION TOOLTIP: Dynamic tooltip for planet details -->
+    <div class="planet-tooltip" id="planet-tooltip">
+        <h3 id="tooltip-title"></h3>
+        <div id="tooltip-content"></div>
+    </div>
+
+    <!-- INFORMATION PANEL: Fixed sidebar with solar system facts -->
+    <div class="info-panel">
+        <h3>Solar System Explorer</h3>
+        <p>Our solar system consists of the Sun and everything that orbits around it.</p>
+        <p><strong>Age:</strong> 4.6 billion years</p>
+        <p><strong>Planets:</strong> 8 major planets</p>
+        <p><strong>Distance:</strong> 100,000 AU diameter</p>
+        <p><strong>Tip:</strong> Hover over any celestial body to discover detailed information about its unique characteristics and fascinating features.</p>
+    </div>
+
+<!-- CONTROL BUTTONS: Interactive controls for the solar system animation -->
+    <div class="controls">
+        <!-- Pause/resume all planetary motion -->
+        <button class="control-btn" onclick="toggleAnimation()">Pause/Play</button>
+        <!-- Increase orbital speed (cycles through speeds) -->
+        <button class="control-btn" onclick="speedUp()">Speed Up</button>
+        <!-- Reset to default speed and play state -->
+        <button class="control-btn" onclick="resetView()">Reset</button>
+    </div>
+
+    <!-- Link to external JavaScript file for all interactive functionality -->
+    <script src="script.js"></script>
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑ Top</button>
+
+</body>
+</html>
